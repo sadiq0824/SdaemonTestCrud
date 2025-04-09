@@ -1,0 +1,112 @@
+﻿@model SdaemonTestCrud.Models.TaskItem
+
+@{
+    ViewData["Title"] = "Task Details";
+}
+
+<style>
+    .details-container {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 30px;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 12px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .details-title {
+        font-size: 28px;
+        font-weight: 600;
+        text-align: center;
+        margin-bottom: 30px;
+        color: #333;
+    }
+
+    .details-item {
+        display: flex;
+        padding: 12px 0;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+        .details-item:last-child {
+            border-bottom: none;
+        }
+
+    .details-label {
+        flex: 1;
+        font-weight: 600;
+        color: #666;
+    }
+
+    .details-value {
+        flex: 2;
+        color: #222;
+    }
+
+    .details-buttons {
+        margin-top: 30px;
+        text-align: center;
+    }
+
+        .details-buttons a {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 10px 22px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            color: #fff;
+            transition: background 0.3s ease;
+        }
+
+    .edit-btn {
+        background-color: #007bff;
+    }
+
+        .edit-btn:hover {
+            background-color: #0056b3;
+        }
+
+    .back-btn {
+        background-color: #6c757d;
+    }
+
+        .back-btn:hover {
+            background-color: #545b62;
+        }
+</style>
+
+<div class="details-container">
+    <div class="details-title">Task Details</div>
+
+    <div class="details-item">
+        <div class="details-label">@Html.DisplayNameFor(model => model.Id):</div>
+        <div class="details-value">@Html.DisplayFor(model => model.Id)</div>
+    </div>
+
+    <div class="details-item">
+        <div class="details-label">@Html.DisplayNameFor(model => model.Title):</div>
+        <div class="details-value">@Html.DisplayFor(model => model.Title)</div>
+    </div>
+
+    <div class="details-item">
+        <div class="details-label">@Html.DisplayNameFor(model => model.Description):</div>
+        <div class="details-value">@Html.DisplayFor(model => model.Description)</div>
+    </div>
+
+    <div class="details-item">
+        <div class="details-label">@Html.DisplayNameFor(model => model.DueDate):</div>
+        <div class="details-value">@Html.DisplayFor(model => model.DueDate)</div>
+    </div>
+
+    <div class="details-item">
+        <div class="details-label">@Html.DisplayNameFor(model => model.IsComplete):</div>
+        <div class="details-value">@Html.DisplayFor(model => model.IsComplete)</div>
+    </div>
+
+    <div class="details-buttons">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "edit-btn" })
+        <a asp-action="Index" class="back-btn">Back to List</a>
+    </div>
+</div>
